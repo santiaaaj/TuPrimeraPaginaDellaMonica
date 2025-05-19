@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'blog/css/estilos.css' %}">
+    <title>{% block title %}Mi Blog{% endblock %}</title>
+</head>
+<body>
+    
+    <nav>
+        <nav class="navbar">
+  <a href="{% url 'home' %}">Inicio</a>
+  <a href="{% url 'crear_autor' %}">Nuevo Autor</a>
+  <a href="{% url 'crear_categoria' %}">Nueva Categoría</a>
+  <a href="{% url 'crear_post' %}">Nuevo Post</a>
+  <a href="{% url 'buscar_post' %}">Buscar Post</a>
+</nav>
+
+    </nav>
+<header class="encabezado">
+  <div class="frase-superpuesta">
+    <h2>Mi primer pagina web con Django!</h2>
+  </div>
+  <img src="{% static 'blog/img/header.jpg' %}" alt="Header" class="imagen-header">
+</header>
+
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
