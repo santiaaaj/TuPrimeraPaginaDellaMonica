@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AutorForm, CategoriaForm, PostForm, BusquedaPostForm, RegistroUsuarioForm, PerfilForm
 from .models import Post, Page, Perfil
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -19,7 +19,7 @@ def crear_autor(request):
         form = AutorForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = AutorForm()
     return render(request, 'blog/formulario.html', {'form': form, 'titulo': 'Crear Autor'})
@@ -30,7 +30,7 @@ def crear_categoria(request):
         form = CategoriaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = CategoriaForm()
     return render(request, 'blog/formulario.html', {'form': form, 'titulo': 'Crear Categoría'})
@@ -41,7 +41,7 @@ def crear_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('blog:home')
     else:
         form = PostForm()
     return render(request, 'blog/formulario.html', {'form': form, 'titulo': 'Crear Post'})
@@ -66,8 +66,8 @@ def pages_list(request):
     return render(request, 'blog/pages_list.html', {'pages': pages})
 
 def page_details(request, page_id):
-    page = Page.objects.get(id=page_id)
-    return render(request, 'blog/page_detail.html', {'page': page})
+    post = get_object_or_404(Post, id=page_id)
+    return render(request, 'blog/page_detail.html', {'post': post})
 
 class PageCreateView(LoginRequiredMixin, CreateView):
     model = Page

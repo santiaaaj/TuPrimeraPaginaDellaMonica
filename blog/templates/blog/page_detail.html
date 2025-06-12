@@ -1,16 +1,23 @@
 {% extends "base.html" %}
 
 {% if user.is_authenticated %}
-  <a href="{% url 'page_edit' object.pk %}">Editar</a>
-  <a href="{% url 'page_delete' object.pk %}">Borrar</a>
+  <a href="{% url 'page_edit' post.pk %}">Editar</a>
+  <a href="{% url 'page_delete' post.pk %}">Borrar</a>
 {% endif %}
-
+##
 {% block content %}
-  <h2>{{ object.titulo }}</h2>
-  <p><strong>Subtítulo:</strong> {{ object.subtitulo }}</p>
-  <p><strong>Fecha:</strong> {{ object.fecha }}</p>
-  <img src="{{ object.imagen.url }}" alt="Imagen de la página" width="400">
+  <h2>{{ post.titulo }}</h2>
+  <p><strong>Subtítulo:</strong> {{ post.subtitulo }}</p>
+  <p><strong>Fecha:</strong> {{ post.fecha_publicacion }}</p>
+  {% if post.imagen %}
+  <img src="{{ post.imagen.url }}" alt="Imagen de la página" width="400">
+  {% else %}
+  <p>No hay imagen para este post.</p>
+  {% endif %}
+  
+   <p><strong>Autor:</strong> {{ post.autor.nombre }}</p>
+
   <div>
-    {{ object.contenido|safe }}
+    {{ post.contenido|safe }}
   </div>
 {% endblock %}

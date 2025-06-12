@@ -97,7 +97,7 @@ button:hover {
 
 .imagen-header {
   width: 100%;
-  height: 450px;
+  height: 1000px;
   object-fit: cover;
 }
 
@@ -106,8 +106,123 @@ button:hover {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: whitesmoke;
   font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 5px #000;
 }
+
+/* CSS */
+.container {
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 40px auto; /* Centra el contenido y añade espacio arriba/abajo */
+    padding: 0 20px; /* Padding a los lados para que el contenido no toque los bordes */
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    margin-bottom: 25px; /* Espacio entre tarjetas */
+    padding: 25px;
+    transition: transform 0.2s ease; /* Pequeña animación al pasar el mouse */
+}
+
+.post-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta ligeramente al pasar el mouse */
+}
+
+.post-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.post-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+
+
+
+    
+    .form-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        padding: 30px;
+        max-width: 500px;
+    }
+
+    .form-container h1 {
+        color: var(--primary-color, #007bff);
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input[type="password"]:focus {
+        border-color: var(--primary-color, #007bff);
+        outline: none;
+    }
+
+    .error-message {
+        color: #dc3545; /* Rojo para mensajes de error */
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .form-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+  
+    .message-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        padding: 30px;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .message-container h1 {
+        color: var(--accent-color, #28a745); /* Color verde para éxito */
+        margin-bottom: 20px;
+    }
+
+    .message-container p {
+        margin-bottom: 20px;
+    }
+   

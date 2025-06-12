@@ -19,8 +19,10 @@ class Categoria(models.Model):
 
 class Post(models.Model):
     titulo = models.CharField(max_length=200)
+    subtitulo = models.CharField(max_length=250, blank=True, null=True)
     contenido = models.TextField()
     fecha_publicacion = models.DateField(auto_now_add=True)
+    imagen = models.ImageField(upload_to='post_images/', blank=True, null=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
@@ -44,4 +46,4 @@ class Perfil(models.Model):
     avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
 
     def __str__(self):
-        return f'Perfil de {self.usuario.username}'    
+        return f'Perfil de {self.user.username}'    

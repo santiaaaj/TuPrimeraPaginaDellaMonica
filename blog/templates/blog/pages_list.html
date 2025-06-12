@@ -8,7 +8,7 @@
         <li>
           <h3>{{ page.titulo }}</h3>
           <p>{{ page.descripcion|truncatewords:20 }}</p>
-          <a href="{% url 'page_detail' page.id %}">Leer más</a>
+          <a href="{% url 'blog:page_detail' page.id %}">Leer más</a>
         </li>
       {% endfor %}
     </ul>

@@ -5,6 +5,9 @@
 
   <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
   <p><strong>Email:</strong> {{ user.email }}</p>
+  <p>
+     <a href="{% url 'blog:change_password' %}" class="btn btn-primary">Cambiar Contraseña</a>
+  </p>
 
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
