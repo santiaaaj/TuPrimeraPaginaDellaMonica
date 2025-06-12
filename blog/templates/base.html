@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Mi Blog{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'blog/css/estilos2.css' %}">
+</head>
+<body>
+
+  
+  <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <div class="nav-izquierda">
+      <a href="{% url 'home' %}">Inicio</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'crear_autor' %}">Nuevo Autor</a> 
+      <a href="{% url 'crear_categoria' %}">Nueva Categoría</a> 
+      <a href="{% url 'crear_post' %}">Nuevo Post</a>
+      <a href="{% url 'buscar_post' %}">Buscar Post</a> 
+      <a href="{% url 'about' %}">Acerca de mí</a>
+      <a href="{% url 'pages_list' %}">Blog</a>
+      {% endif %}
+    </div>
+
+    
+    <div class="nav-derecha">
+      {% if user.is_authenticated %}
+        <a href="{% url 'perfil' %}">Mi Perfil</a>
+        <span>Hola, {{ user.username }}</span>
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit" style="background:none; border:none; color:blue; cursor:pointer;">
+            Cerrar sesión
+          </button>
+        </form>
+      {% else %}
+        <a href="{% url 'login' %}">Iniciar sesión</a> |
+        <a href="{% url 'registro' %}">Registrarse</a>
+      {% endif %}
+    </div>
+
+  </nav>
+
+  
+  <header class="encabezado">
+    <div class="frase-superpuesta">
+      <h2>Mi primer página web con Django!</h2>
+    </div>
+    <img src="{% static 'blog/img/header.jpg' %}" alt="Header" class="imagen-header">
+  </header>
+
+  
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+</body>
+</html>

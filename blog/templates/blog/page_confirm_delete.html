@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>¿Estás seguro de que querés borrar la página "{{ object.titulo }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+    <a href="{% url 'pages' %}">Cancelar</a>
+  </form>
+{% endblock %}

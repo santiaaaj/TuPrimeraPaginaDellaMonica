@@ -16,7 +16,7 @@ Este es mi primer proyecto web con Django, creado como parte de la entrega prác
 ##  Estructura del Proyecto
 
 - **Modelos (`models.py`)**:  
-  - `Autor`: nombre, email.  
+  - `Autor`: nombre, email.
   - `Categoria`: nombre.  
   - `Post`: título, contenido, fecha, autor, categoría.
 

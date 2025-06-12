@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Mi perfil</h1>
+
+  <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    {% if user.perfil.avatar %}
+  <p><img src="{{ user.perfil.avatar.url }}" alt="Avatar" style="max-width: 150px;"></p>
+  
+{% else %}
+  <p>No tenés un avatar cargado.</p>
+{% endif %}    
+
+<button type="submit">Guardar cambios</button>
+</form>
+
+
+{% endblock %}

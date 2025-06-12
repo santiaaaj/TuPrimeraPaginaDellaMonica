@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% if user.is_authenticated %}
+  <a href="{% url 'page_edit' object.pk %}">Editar</a>
+  <a href="{% url 'page_delete' object.pk %}">Borrar</a>
+{% endif %}
+
+{% block content %}
+  <h2>{{ object.titulo }}</h2>
+  <p><strong>Subtítulo:</strong> {{ object.subtitulo }}</p>
+  <p><strong>Fecha:</strong> {{ object.fecha }}</p>
+  <img src="{{ object.imagen.url }}" alt="Imagen de la página" width="400">
+  <div>
+    {{ object.contenido|safe }}
+  </div>
+{% endblock %}
