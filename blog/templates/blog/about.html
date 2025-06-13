@@ -1,6 +1,44 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-  <h1>Acerca de mí</h1>
-  <p>¡Hola! Soy el dueño de esta página. Bienvenido a mi blog personal hecho con Django.</p>
+<div class="about-container">
+    <h1>Acerca de Mí</h1>
+
+    <div class="profile-section">
+        <img src="/static/blog/img/frente.jpg" alt="Tu foto de perfil" class="profile-pic">
+        
+    </div>
+
+    <div class="description-section">
+        <h2>Hola, soy Santino Martin Della Mónica</h2>
+        <p>
+            ¡Bienvenido a mi espacio en la web! Soy un estudiante apasionado por la programación.
+        </p>
+        <p>
+            Desde que he comenzado este curso, me he dedicado a explorar mucho sobre este lenguaje (Python) y sobre todo en este framework, Django.
+        </p>
+        <p>
+            En este blog, encontrarás diferentes tipos de posteos, con diferentes categorias y autores, para que puedas publicar o contar tus cosas. Mi objetivo es que en este sitio puedas expresar lo que quieras.
+        </p>
+        <p>
+            Fuera del código, disfruto de pasar tiempo con mis seres queridos y hacer lo que me hace feliz. 
+        </p>
+        <p>
+            ¡Gracias por visitar mi página! Espero que disfrutes del contenido y que encuentres algo interesante o útil. Si tienes alguna pregunta o simplemente quieres saludar, no dudes en conectar conmigo en mis redes sociales.
+        </p>
+    </div>
+
+    <div class="social-media-section">
+        <h2>Mis Redes Sociales</h2>
+        <ul class="social-links">
+            {% comment %}
+            Puedes usar iconos de Font Awesome si los tienes configurados
+            o simplemente texto y enlaces. Aquí uso solo texto.
+            Para Font Awesome, tendrías que haberlo enlazado en tu base.html.
+            {% endcomment %}
+            <li><a href="https://github.com/santiaaaj" target="_blank">GitHub</a></li>
+            <li><a href="https://www.instagram.com/santi_aaaj/" target="_blank">Instagram</a></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}

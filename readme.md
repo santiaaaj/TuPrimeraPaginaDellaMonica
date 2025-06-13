@@ -1,47 +1,53 @@
-# TuPrimeraPaginaDellaMonica
 
-Este es mi primer proyecto web con Django, creado como parte de la entrega práctica para desarrollar una aplicación estilo blog. Incluye herencia de plantillas, tres modelos interrelacionados, formularios para insertar datos y un buscador.
+# Tu Primera Página Web con Django (Blog Personal)
 
----
-
-##  Tecnologías utilizadas
-
-- Python 3.13
-- Django 5.x
-- HTML + CSS (con uso de `static`)
-- SQLite (por defecto en Django)
+Este es un proyecto de desarrollo web construido con Django, que funciona como un blog personal o una plataforma de publicaciones. Permite a los usuarios crear, ver, editar y eliminar publicaciones (posts), así como gestionar autores y categorías. También incluye funcionalidades de autenticación (registro, inicio y cierre de sesión) y perfiles de usuario.
 
 ---
 
-##  Estructura del Proyecto
+## 🚀 Características Principales
 
-- **Modelos (`models.py`)**:  
-  - `Autor`: nombre, email.
-  - `Categoria`: nombre.  
-  - `Post`: título, contenido, fecha, autor, categoría.
-
-- **Formularios (`forms.py`)**:  
-  - Un formulario para crear cada modelo.
-
-- **Vistas (`views.py`)**:  
-  - `home`: página de inicio.  
-  - `crear_autor`: formulario para agregar un autor.  
-  - `crear_categoria`: formulario para agregar una categoría.  
-  - `crear_post`: formulario para crear una entrada de blog.  
-  - `buscar_post`: búsqueda de posts por título.
-
-- **Herencia de plantillas (`templates/`)**:  
-  - `base.html`: plantilla base con header e imagen.  
-  - Otras plantillas heredan de esta base.
-
-- **Archivos estáticos (`static/`)**:  
-  - Imágenes, estilos (`estilos.css`), etc.
+* **Gestión de Posts:**
+    * Crear, leer, actualizar y eliminar posts.
+    * Posts con título, subtítulo, contenido (soporte para Rich Text a través de CKEditor si está configurado), fecha de publicación, imagen, autor y categoría.
+* **Gestión de Autores:** Crear y listar autores.
+* **Gestión de Categorías:** Crear y listar categorías para organizar los posts.
+* **Páginas Estáticas/Información:** Sección de "Páginas" adicional para contenido que no es un post de blog (ej. "Acerca de Mí").
+* **Buscador de Posts:** Funcionalidad para buscar posts por título.
+* **Autenticación de Usuarios:**
+    * Registro de nuevos usuarios.
+    * Inicio de sesión.
+    * Cierre de sesión.
+* **Perfiles de Usuario:**
+    * Creación y gestión de perfiles de usuario (con biografía y avatar).
+* **Interfaz de Administración Django:** Gestión completa de todos los modelos (Posts, Autores, Categorías, Páginas, Perfiles, Usuarios) a través del panel de administración integrado de Django.
+* **Estilos:** Implementación de CSS personalizado para una estética específica.
 
 ---
 
-##  Cómo probar el proyecto
+## 🛠️ Tecnologías Utilizadas
 
-1. **Cloná el repositorio**  
-   ```bash
-   git clone https://github.com/tuusuario/TuPrimeraPaginaDellaMonica.git
-   cd TuPrimeraPaginaDellaMonica
+* **Backend:**
+    * Python 3.x
+    * Django 5.2.1
+* **Frontend:**
+    * HTML5
+    * CSS3
+    * JavaScript (base)
+* **Base de Datos:** SQLite (por defecto en desarrollo, configurable para producción)
+* **Manejo de Contenido Enriquecido:** CKEditor (campo `RichTextField` para `Page.contenido` en `blog/models.py`)
+* **Manejo de Archivos:** Configuración para servir archivos estáticos (`STATIC_ROOT`, `STATIC_URL`) y archivos media (`MEDIA_ROOT`, `MEDIA_URL`) en desarrollo.
+
+---
+
+## ⚙️ Configuración y Ejecución del Proyecto
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
+
+### 1. Clonar el Repositorio (Si aplica)
+
+Si este es un repositorio Git, clónalo:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd TuPrimeraPaginaDellaMonica 

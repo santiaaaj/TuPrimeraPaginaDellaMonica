@@ -92,7 +92,7 @@ def registro(request):
         if form.is_valid():
             user = form.save()
             login(request, user)  # Inicia sesión automáticamente
-            return redirect("home")
+            return redirect("blog:home")
     else:
         form = RegistroUsuarioForm()
     return render(request, "blog/registro.html", {"form": form})     
@@ -113,7 +113,7 @@ def perfil_view(request):
             perfil_obj.avatar.delete(save=False)
         if form.is_valid():
             form.save()
-            return redirect('perfil')
+            return redirect('blog:perfil')
     else:
         form = PerfilForm(instance=perfil_obj)
 
